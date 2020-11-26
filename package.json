@@ -7,37 +7,17 @@
     "last 2 versions",
     "Firefox ESR"
   ],
-  "config": {
-    "browsersync": {
-      "proxy": "local.wordpress",
-      "port": 3000
-    },
-    "image": {
-      "src": "assets/_src/images",
-      "dist": "assets/images"
-    },
-    "js": {
-      "entry": "assets/_src/js/bundle.js",
-      "output": "assets/js/bundle.js"
-    },
-    "css": {
-      "src": "assets/_src/sass",
-      "dist": "assets/css",
-      "style": "compressed",
-      "map": "--map"
-    }
-  },
   "scripts": {
-    "dev": "npm-run-all -p imagemin sass webpack -p browser watch",
-    "browser": "browser-sync \"http://$npm_package_config_browsersync_proxy\" -f \"**/*.php\" \"$npm_package_config_css_dist\" \"$npm_package_config_js_dist\" \"$npm_package_config_image_dist\" --port $npm_package_config_browsersync_port",
-    "build": "run-p imagemin sass webpack",
-    "imagemin": "node imagemin \"$npm_package_config_image_src/**/*\" $npm_package_config_image_dist",
-    "presass": "stylelint \"$npm_package_config_css_src/**/*\" --fix",
-    "sass": "sass $npm_package_config_css_src:$npm_package_config_css_dist --style=compressed",
-    "postsass": "postcss $npm_package_config_css_dist/*.css --use=autoprefixer --dir=$npm_package_config_css_dist $npm_package_config_css_map",
-    "webpack": "webpack $npm_package_config_js_entry -o $npm_package_config_js_output",
-    "watch:imagemin": "onchange \"$npm_package_config_image_src/**/*\" -e \".DS_Store\" -- npm run imagemin",
-    "watch:sass": "onchange \"$npm_package_config_css_src/**/*\" -e \".DS_Store\" -- npm run sass",
+    "dev": "npm-run-all -p sass webpack -p browser watch",
+    "browser": "browser-sync http://local.wordpress/wp -f **/*.php assets/css assets/js/bundle.js assets/images --port 3000",
+    "build": "run-p sass webpack",
+    "imagemin": "node imagemin assets/_src/images/**/* assets/images",
+    "presass": "stylelint assets/_src/sass/**/* --fix",
+    "sass": "sass assets/_src/sass:assets/css --style=compressed",
+    "postsass": "postcss assets/css/*.css --use=autoprefixer --dir=assets/css --map",
+    "webpack": "webpack assets/_src/js/bundle.js -o assets/js/bundle.js",
+    "watch:imagemin": "onchange assets/_src/images/**/* -e .DS_Store -- npm run imagemin",
+    "watch:sass": "onchange assets/_src/sass/**/* -e .DS_Store -- npm run sass",
     "watch:webpack": "npm run webpack -- --watch",
     "watch": "run-p watch:*"
   },
@@ -98,5 +78,8 @@
     "typescript": "^4.0.2",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.2"
   }
 }
