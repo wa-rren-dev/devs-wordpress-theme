@@ -1,4 +1,65 @@
 @charset "UTF-8";
 
-@use 'foundation';
-@use 'layouts';
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
+
+
+@import 'mq';
+
+* {
+	box-sizing: border-box;
+	font-family: 'Castoro', monospace;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 5vw;
+	font-size: 18px;
+}
+
+.byline {
+	font-style: italic;
+	color: rgba(0,0,0,0.75);
+}
+
+.date {
+	color: rgba(0,0,0,0.5);
+}
+
+main {
+	background: gray;
+	max-width: 1000px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p,
+hr,
+button {
+	margin-bottom: 1rem;
+}
+
+li {
+	margin-bottom: 0.5rem;
+}
+
+.archive {
+	list-style: none;
+}
+
+ul, ol {
+	margin-left: 0;
+	list-style-position: inside;
+}

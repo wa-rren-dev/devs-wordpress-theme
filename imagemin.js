@@ -6,7 +6,7 @@ const imageminSvgo = require('imagemin-svgo');
 
 const input = process.argv[2];
 const dest = process.argv[3];
-if (! input) return;
+if (!input) return;
 
 (async () => {
   const files = await imagemin([input], {
@@ -17,8 +17,8 @@ if (! input) return;
       imageminOptipng(),
       imageminSvgo({
         plugins: [
-          { removeViewBox: false }
-        ]
+          {removeViewBox: false},
+        ],
       }),
     ],
   });
