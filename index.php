@@ -10,8 +10,6 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<!--<button class="dark-mode">Enable Dark Mode</button>-->
-
 <?php if (is_single()) { ?>
 
 	<?php the_post(); ?>
