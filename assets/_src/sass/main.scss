@@ -4,8 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap');
 
-
 @import 'mq';
+
+:root {
+	--background: #f5f5dc;
+}
 
 * {
 	box-sizing: border-box;
@@ -17,6 +20,7 @@
 body {
 	padding: 5vw;
 	font-size: 18px;
+	background-color: var(--background);
 }
 
 .byline {
@@ -29,7 +33,6 @@ body {
 }
 
 main {
-	background: gray;
 	max-width: 1000px;
 }
 

@@ -12,7 +12,7 @@
 
 <!--<button class="dark-mode">Enable Dark Mode</button>-->
 
-<? if (is_single()) { ?>
+<?php if (is_single()) { ?>
 
 	<?php the_post(); ?>
 		<header>
@@ -28,7 +28,7 @@
 		<main>
 			<?php the_content(); ?>
 		</main>
-<? } else { ?>
+<?php } else { ?>
 	<header>
 		<h1>
 			<marquee behavior="alternate" scrolldelay="1000" direction="right">
@@ -45,7 +45,7 @@
 			<?php endwhile; endif;?>
 		</ul>
 	</main>
-<? } ?>
+<?php } ?>
 
 <?php wp_footer();?>
 
