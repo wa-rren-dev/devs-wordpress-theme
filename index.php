@@ -31,7 +31,7 @@
 		</aside>
 	</main>
 <?php } else { ?>
-	<div class="column column__reading">
+	<div class="column">
 	<header>
 		<h1>
 			<marquee behavior="alternate" scrolldelay="1000" direction="right">

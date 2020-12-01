@@ -105,3 +105,29 @@ function twentynineteen_get_discussion_data() {
 
 	return $discussion;
 }
+
+// This will occur when the comment is posted
+function plc_comment_post( $incoming_comment ) {
+
+	// convert everything in a comment to display literally
+	$incoming_comment['comment_content'] = htmlspecialchars($incoming_comment['comment_content']);
+
+	// the one exception is single quotes, which cannot be #039; because WordPress marks it as spam
+	$incoming_comment['comment_content'] = str_replace( "'", '&apos;', $incoming_comment['comment_content'] );
+
+	return( $incoming_comment );
+}
+
+// This will occur before a comment is displayed
+function plc_comment_display( $comment_to_display ) {
+
+	// Put the single quotes back in
+	$comment_to_display = str_replace( '&apos;', "'", $comment_to_display );
+
+	return $comment_to_display;
+}
+
+add_filter( 'preprocess_comment', 'plc_comment_post', '', 1);
+add_filter( 'comment_text', 'plc_comment_display', '', 1);
+add_filter( 'comment_text_rss', 'plc_comment_display', '', 1);
+add_filter( 'comment_excerpt', 'plc_comment_display', '', 1);
