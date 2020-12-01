@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="<?php bloginfo('charset'); ?>"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<?php wp_head(); ?>
 </head>
 
@@ -13,39 +13,57 @@
 <?php if (is_single()) { ?>
 
 	<?php the_post(); ?>
-		<header>
-			<h1>
-				<marquee behavior="alternate" scrolldelay="1000" direction="right">
+	<main class="container">
+		<div class="column column__reading">
+			<header>
+				<h1>
 					<?php the_title(); ?>
-				</marquee>
-				<marquee behavior="alternate" scrolldelay="900" direction="right">
-					<span class="byline">by <?php echo get_the_author_meta("first_name") ?></span>, <span class="date"><?php echo get_the_date("d-m-Y"); ?></span>
-				</marquee>
-			</h1>
-		</header>
-		<main>
-			<?php the_content(); ?>
-		</main>
+					<span class="byline">by <?php echo get_the_author_meta("first_name") ?></span>, <span
+						class="date"><?php echo get_the_date("d-m-Y"); ?></span>
+				</h1>
+			</header>
+			<article>
+				<?php the_content(); ?>
+			</article>
+		</div>
+		<aside class="column column__writing">
+			<?php comments_template() ?>
+		</aside>
+	</main>
 <?php } else { ?>
+	<div class="column column__reading">
 	<header>
 		<h1>
 			<marquee behavior="alternate" scrolldelay="1000" direction="right">
-					devs
+				top secret dev blog
 			</marquee>
 		</h1>
 	</header>
 	<main>
 		<ul class="archive">
-			<?php if ( have_posts() ) : while (have_posts() ) : the_post(); ?>
-			<li>
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> by <span class="byline"><?php echo get_the_author_meta("first_name") ?></span>, <span class="date"><?php echo get_the_date("d-m-Y"); ?></span></h2>
-			</li>
-			<?php endwhile; endif;?>
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				<li>
+					<h2 class="post-title h2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<p class="post-meta h2">
+						by
+						<span class="byline"><?php echo get_the_author_meta("first_name") ?></span>,
+						<span class="date"><?php echo get_the_date("d-m-Y"); ?></span>
+
+						<?php
+						$comments = get_comments_number();
+						if ($comments > 0) {
+							echo "<span class='comment-count'>" . strval($comments) . "&nbsp;" . pluralize($comments, 'comment', 'comments') . "</span>";
+						}
+						?>
+					</p>
+				</li>
+			<?php endwhile; endif; ?>
 		</ul>
 	</main>
+	</div>
 <?php } ?>
 
-<?php wp_footer();?>
+<?php wp_footer(); ?>
 
 </body>
 </html>
