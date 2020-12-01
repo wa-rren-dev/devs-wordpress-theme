@@ -33,11 +33,7 @@
 <?php } else { ?>
 	<div class="column">
 	<header>
-		<h1>
-			<marquee behavior="alternate" scrolldelay="1000" direction="right">
-				top secret dev blog
-			</marquee>
-		</h1>
+		<h1>Top secret dev blog</h1>
 	</header>
 	<main>
 		<ul class="archive">
@@ -45,7 +41,7 @@
 				<li>
 					<h2 class="post-title h2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 					<p class="post-meta h2">
-						by
+						&nbsp;by
 						<span class="byline"><?php echo get_the_author_meta("first_name") ?></span>,
 						<span class="date"><?php echo get_the_date("d-m-Y"); ?></span>
 
