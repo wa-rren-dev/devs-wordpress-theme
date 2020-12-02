@@ -19,7 +19,7 @@
 				<h1>
 					<?php the_title(); ?>
 					<span class="byline">by <?php echo get_the_author_meta("first_name") ?></span>, <span
-						class="date"><?php echo get_the_date("d-m-Y"); ?></span>
+						class="date"><?php echo get_the_date("d/m/Y"); ?></span>
 				</h1>
 			</header>
 			<article>
@@ -33,14 +33,15 @@
 <?php } else { ?>
 	<div class="column">
 	<header>
-		<h1>Top secret dev blog</h1>
+		<h1><?php echo get_bloginfo('name'); ?></h1>
+		<p><?php echo get_bloginfo('description'); ?></p>
 	</header>
 	<main>
 		<ul class="archive">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<li>
-					<h2 class="post-title h2"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<p class="post-meta h2">
+					<h2 class="post-title h4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<p class="post-meta h4">
 						&nbsp;by
 						<span class="byline"><?php echo get_the_author_meta("first_name") ?></span>,
 						<span class="date"><?php echo get_the_date("d-m-Y"); ?></span>
