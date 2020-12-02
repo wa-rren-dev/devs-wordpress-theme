@@ -1,12 +1,17 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
 @import 'mq';
 
 :root {
 	--black: #222;
-	--background: linear-gradient(270deg, rgba(0,0,0,0.025) 0%, rgba(0,0,0,0) 100%);
+	--background: linear-gradient(270deg, rgba(0, 0, 0, 0.025) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+a, button, input, textarea {
+	&:focus {
+		outline: 3px solid rebeccapurple;
+		outline-offset: 3px;
+	}
 }
 
 html {
@@ -16,16 +21,18 @@ html {
 
 * {
 	box-sizing: border-box;
-	font-family: 'Lato', monospace;
+	font-family: monospace;
 	margin: 0;
 	padding: 0;
 }
 
 .comment-count {
 	color: red;
+
 	&:before {
 		content: "(";
 	}
+
 	&:after {
 		content: ")";
 	}
@@ -42,7 +49,7 @@ html {
 .byline {
 	//font-style: italic;
 	//color: rgba(0, 0, 0, 0.75);
-	color: blue;
+	//color: #cf2e2e;
 }
 
 .date {
@@ -103,12 +110,19 @@ li {
 
 .archive {
 	list-style: none;
+	margin-left: 0;
 }
 
-ul, ol {
-	margin-left: 0;
-	list-style-position: inside;
+article {
+	ul, ol {
+		list-style-position: outside;
+		margin-left: 2em;
+	}
+	p {
+		line-height: 1.4;
+	}
 }
+
 
 blockquote {
 	border-left: 3px solid black;
