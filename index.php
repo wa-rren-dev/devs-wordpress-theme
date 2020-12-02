@@ -13,8 +13,8 @@
 <?php if (is_single()) { ?>
 
 	<?php the_post(); ?>
-	<main class="container">
-		<div class="column column__reading">
+	<div class="container">
+		<main class="column column__reading">
 			<header>
 				<h1>
 					<?php the_title(); ?>
@@ -25,11 +25,11 @@
 			<article>
 				<?php the_content(); ?>
 			</article>
-		</div>
+		</main>
 		<aside class="column column__writing">
 			<?php comments_template() ?>
 		</aside>
-	</main>
+	</div>
 <?php } else { ?>
 	<div class="column">
 	<header>
@@ -46,10 +46,10 @@
 						<span class="date"><?php echo get_the_date("d-m-Y"); ?></span>
 
 						<?php
-						$comments = get_comments_number();
-						if ($comments > 0) {
-							echo "<span class='comment-count'>" . strval($comments) . "&nbsp;" . pluralize($comments, 'comment', 'comments') . "</span>";
-						}
+							$comments = get_comments_number();
+							if ($comments > 0) {
+								echo "<span class='comment-count'>" . strval($comments) . "&nbsp;" . pluralize($comments, 'comment', 'comments') . "</span>";
+							}
 						?>
 					</p>
 				</li>

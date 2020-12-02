@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 @import 'mq';
 
@@ -21,10 +21,12 @@ html {
 }
 
 .comment-count {
-	color: rgba(0,0,0,0.42);
+	color: rgba(0, 0, 0, 0.42);
+
 	&:before {
 		content: "(";
 	}
+
 	&:after {
 		content: ")";
 	}
@@ -40,11 +42,11 @@ html {
 
 .byline {
 	font-style: italic;
-	color: rgba(0,0,0,0.75);
+	color: rgba(0, 0, 0, 0.75);
 }
 
 .date {
-	color: rgba(0,0,0,0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -119,38 +121,44 @@ blockquote {
 	background-color: var(--cream);
 	color: var(--black);
 	min-height: 100vh;
+
 	&__reading {
 		width: 70%;
 	}
+
 	&__writing {
 		background: white;
 		width: 30%;
 	}
+
 	@include mq($until: md) {
 		width: 100%;
 	}
 }
 
 .comment-form {
-	background: #eee;
-	padding: 1rem;
 	.logged-in-as {
 		margin-bottom: 1rem;
 	}
+
 	.comment-form-comment {
 		margin-bottom: 0.5rem;
+
 		label {
 			display: block;
 			margin-bottom: 0.5rem;
 		}
+
 		textarea {
 			padding: 0.5rem;
 			max-width: 100%;
 			font-size: 1rem;
 		}
 	}
+
 	.form-submit {
 		margin-bottom: 0;
+
 		input.submit {
 			padding: 0.5rem 1rem;
 			background: rebeccapurple;
@@ -161,33 +169,68 @@ blockquote {
 	}
 }
 
-.commentlist {
-	.comment-date {
-		float: right;
-	}
+
+.comment-list {
 	list-style-type: none;
 	ul {
 		list-style-type: none;
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 	}
-	p {
+}
+
+.comment {
+	padding: 0.5rem;
+	background: rgba(0, 0, 0, 0.025);
+	border-left: solid 3px rgba(0, 0, 0, 0.05);
+	border-bottom: solid 3px rgba(0, 0, 0, 0.05);
+	margin-bottom: 0;
+
+	&__text {
+		p {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	&__author {
+		margin-bottom: 0.5rem;
+		font-weight: bold;
+	}
+
+	&__reply-link {
+		float: right;
+		font-weight: normal;
+	}
+
+	&.depth-1 {
 		margin-bottom: 1rem;
 	}
-	.comment {
-		padding: 0.5rem;
-		background: rgba(0,0,0,0.025);
-		border-left: solid 3px rgba(0,0,0,0.05);
+
+	&__date {
+		text-align: right;
 		margin-bottom: 0;
-		&.depth-1 {
-			margin-bottom: 1rem;
-		}
+		font-size: 0.75rem;
 	}
 }
 
 .comment-respond {
+	border: 3px solid black;
+	margin-bottom: 1rem;
+	background: #eee;
+	padding: 1rem;
+	box-shadow: 0.25rem 0.25rem 0rem;
+
 	.comment-reply-title {
 		margin-bottom: 1rem;
+		font-weight: bold;
+
+		small {
+			font-size: 1rem;
+
+			&:before {
+				content: " "
+			}
+		}
 	}
 }
 
