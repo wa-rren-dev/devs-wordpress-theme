@@ -35,6 +35,7 @@
 	<header>
 		<h1><?php echo get_bloginfo('name'); ?></h1>
 		<p><?php echo get_bloginfo('description'); ?></p>
+		<p>Done? <a href="<?php echo wp_logout_url( home_url()); ?>" title="Logout">Log out</a></p>
 	</header>
 	<main>
 		<ul class="archive">
