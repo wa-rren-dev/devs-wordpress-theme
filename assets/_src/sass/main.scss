@@ -5,12 +5,13 @@
 @import 'mq';
 
 :root {
-	--cream: #ffffe4;
 	--black: #222;
+	--background: linear-gradient(270deg, rgba(0,0,0,0.025) 0%, rgba(0,0,0,0) 100%);
 }
 
 html {
 	font-size: 18px;
+	color: var(--black);
 }
 
 * {
@@ -21,12 +22,10 @@ html {
 }
 
 .comment-count {
-	color: rgba(0, 0, 0, 0.42);
-
+	color: red;
 	&:before {
 		content: "(";
 	}
-
 	&:after {
 		content: ")";
 	}
@@ -41,12 +40,14 @@ html {
 }
 
 .byline {
-	font-style: italic;
-	color: rgba(0, 0, 0, 0.75);
+	//font-style: italic;
+	//color: rgba(0, 0, 0, 0.75);
+	color: blue;
 }
 
 .date {
-	color: rgba(0, 0, 0, 0.5);
+	//color: rgba(0, 0, 0, 0.5);
+	color: green;
 }
 
 
@@ -57,18 +58,22 @@ h1, .h1, h2, .h2 {
 
 h3, .h3 {
 	font-size: 1.8rem;
+	font-weight: bold;
 }
 
 h4, .h4 {
 	font-size: 1.6rem;
+	font-weight: bold;
 }
 
 h5, .h5 {
 	font-size: 1.4rem;
+	font-weight: bold;
 }
 
 h6, .h6 {
 	font-size: 1.2rem;
+	font-weight: bold;
 }
 
 h1,
@@ -118,8 +123,7 @@ blockquote {
 .column {
 	width: 100%;
 	padding: 2.5vw;
-	background-color: var(--cream);
-	color: var(--black);
+	background: var(--background);
 	min-height: 100vh;
 
 	&__reading {
@@ -163,6 +167,7 @@ blockquote {
 			padding: 0.5rem 1rem;
 			background: rebeccapurple;
 			color: white;
+			font-weight: bold;
 			border: none;
 			font-size: 1rem;
 		}
@@ -172,6 +177,7 @@ blockquote {
 
 .comment-list {
 	list-style-type: none;
+
 	ul {
 		list-style-type: none;
 		margin-top: 0.5rem;
