@@ -32,31 +32,33 @@
 	</div>
 <?php } else { ?>
 	<div class="column">
-	<header>
-		<h1><?php echo get_bloginfo('name'); ?></h1>
-		<p><?php echo get_bloginfo('description'); ?></p>
-		<p>Done? <a href="<?php echo wp_logout_url( home_url()); ?>" title="Logout">Log out</a></p>
-	</header>
-	<main>
-		<ul class="archive">
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<li>
-					<h2 class="post-title h4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<p class="post-meta h4">by
-						<span class="byline"><?php echo get_the_author_meta("first_name") ?></span>,
-						<span class="date"><?php echo get_the_date("d-m-Y"); ?></span>
+		<header>
+			<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/learnding.gif" alt="">
+			<h1><?php echo get_bloginfo('name'); ?></h1>
+			<p><?php echo get_bloginfo('description'); ?></p>
+			<p>Done? <a href="<?php echo wp_logout_url(home_url()); ?>" title="Logout">Log out</a>.</p>
+			<button class="btn" id="dark-mode">Dark mode</button>
+		</header>
+		<main>
+			<ul class="archive">
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<li>
+						<h2 class="post-title h4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+						<p class="post-meta h4">by
+							<span class="byline"><?php echo get_the_author_meta("first_name") ?></span>,
+							<span class="date"><?php echo get_the_date("d-m-Y"); ?></span>
 
-						<?php
+							<?php
 							$comments = get_comments_number();
 							if ($comments > 0) {
 								echo "<span class='comment-count'>" . strval($comments) . "&nbsp;" . pluralize($comments, 'comment', 'comments') . "</span>";
 							}
-						?>
-					</p>
-				</li>
-			<?php endwhile; endif; ?>
-		</ul>
-	</main>
+							?>
+						</p>
+					</li>
+				<?php endwhile; endif; ?>
+			</ul>
+		</main>
 	</div>
 <?php } ?>
 

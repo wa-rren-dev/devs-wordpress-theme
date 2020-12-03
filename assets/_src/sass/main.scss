@@ -94,7 +94,8 @@ ol,
 p,
 hr,
 blockquote,
-button {
+button,
+img {
 	margin-bottom: 2rem;
 }
 
@@ -269,4 +270,7 @@ blockquote {
 	width: 1px;
 }
 
-
+.btn {
+	font-size: 1rem;
+	padding: 0.25rem 0.5rem;
+}
