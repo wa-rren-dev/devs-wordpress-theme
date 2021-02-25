@@ -157,6 +157,7 @@ blockquote {
 
 	@include mq($until: md) {
 		width: 100%;
+		min-height: none;
 	}
 }
 
@@ -273,4 +274,8 @@ blockquote {
 .btn {
 	font-size: 1rem;
 	padding: 0.25rem 0.5rem;
+}
+
+img, video {
+	max-width: 100%;
 }
