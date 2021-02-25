@@ -3,8 +3,8 @@
 add_filter( 'registration_errors', 'myplugin_registration_errors', 10, 3 );
 function myplugin_registration_errors( $errors, $sanitized_user_login, $user_email ) {
 
-  if (! preg_match('/( |^)[^ ]+@mydomain\.co\.uk( |$)/', $user_email )) {
-    $errors->add( 'invalid_email', __( 'ERROR: Only valid "mydomain" email address is allowed.' ));
+  if (! preg_match('/( |^)[^ ]+@nice\.org\.uk( |$)/', $user_email )) {
+    $errors->add( 'invalid_email', __( 'ERROR: Please use a NICE email to register.' ));
     $user_email = '';
   }
 
