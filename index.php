@@ -63,5 +63,6 @@
 	</div>
 <?php } ?>
 
+	<script src="<?php echo bloginfo('template_directory'); ?>/assets/js/bundle.js">
 </body>
 </html>
