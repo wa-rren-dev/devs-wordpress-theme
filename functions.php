@@ -1,5 +1,16 @@
 <?php
 
+add_filter( 'registration_errors', 'myplugin_registration_errors', 10, 3 );
+function myplugin_registration_errors( $errors, $sanitized_user_login, $user_email ) {
+
+  if (! preg_match('/( |^)[^ ]+@mydomain\.co\.uk( |$)/', $user_email )) {
+    $errors->add( 'invalid_email', __( 'ERROR: Only valid "mydomain" email address is allowed.' ));
+    $user_email = '';
+  }
+
+  return $errors;
+}
+
 add_action( 'after_setup_theme', function() {
 	load_theme_textdomain( 'bathe', get_theme_file_uri( 'languages' ) );
 	add_theme_support( 'automatic-feed-links' );
