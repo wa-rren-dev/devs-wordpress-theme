@@ -9,9 +9,14 @@ if (darkMode) {
 
 if (superDarkMode) {
 	superDarkMode.addEventListener("click", function () {
-		document.querySelectorAll("*").forEach((i) => {
-			i.style.opacity = "0";
+		document.querySelectorAll("body *").forEach((i) => {
+			i.remove();
 		});
 		document.querySelector("html").style.backgroundColor = "black";
 	});
 }
+
+console.log(
+	"%cABANDON HOPE ALL YE WHO ENTER HERE",
+	"color: white; background: red; padding: 15px; font-size: 30px; font-weight: bold;"
+);
