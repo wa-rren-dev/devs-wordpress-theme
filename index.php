@@ -37,7 +37,7 @@
 			<img src="<?php echo bloginfo('template_directory'); ?>/assets/images/learnding.gif" alt="">
 			<h1><?php echo get_bloginfo('name'); ?></h1>
 			<p><?php echo get_bloginfo('description'); ?></p>
-			<p>Done? <a href="<?php echo wp_logout_url(home_url()); ?>" title="Logout">Log out</a>.</p>
+			<p>Done? <a href="<?php echo wp_logout_url(home_url()); ?>" title="Logout">Log out</a>. Wanna write something? <a href="/wp-admin/edit.php">Create a new post!</a></p>
 			<button class="btn" id="dark-mode">Dark mode</button>
 			<button class="btn" id="super-dark-mode">Super Dark mode</button>
 		</header>
