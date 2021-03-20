@@ -39,6 +39,7 @@
 			<p><?php echo get_bloginfo('description'); ?></p>
 			<p>Done? <a href="<?php echo wp_logout_url(home_url()); ?>" title="Logout">Log out</a>.</p>
 			<button class="btn" id="dark-mode">Dark mode</button>
+			<button class="btn" id="super-dark-mode">Super Dark mode</button>
 		</header>
 		<main>
 			<ul class="archive">

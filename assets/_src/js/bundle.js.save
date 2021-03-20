@@ -9,10 +9,7 @@ if (darkMode) {
 
 if (superDarkMode) {
   superDarkMode.addEventListener('click', function() {
-    document.querySelectorAll('*').forEach((i) => {
-      i.style.color='black';
-      i.style.backgroundColor = 'black';
-    });
-    alert('You asked for it');
+	document.querySelectorAll("*").forEach(i => {i.style.color="black"; i.style.backgroundColor = "black"});
+alert('You asked for it');
   });
 }
