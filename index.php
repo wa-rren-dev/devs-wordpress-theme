@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
       __   __   ___              __   ___      ___         __
 |\ | /  \ /__` |__  \ /     /\  |__) |__  |\ |  |     \ / /  \ |  |
 | \| \__/ .__/ |___  |     /~~\ |  \ |___ | \|  |      |  \__/ \__/
 
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
