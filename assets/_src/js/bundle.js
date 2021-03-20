@@ -13,6 +13,7 @@ if (superDarkMode) {
 			i.remove();
 		});
 		document.querySelector("html").style.backgroundColor = "black";
+		document.querySelector("html").style.cursor = "pointer";
 	});
 }
 
