@@ -1,8 +1,7 @@
-<!DOCTYPE html>
       __   __   ___              __   ___      ___         __
 |\ | /  \ /__` |__  \ /     /\  |__) |__  |\ |  |     \ / /  \ |  |
 | \| \__/ .__/ |___  |     /~~\ |  \ |___ | \|  |      |  \__/ \__/
-
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>"/>
